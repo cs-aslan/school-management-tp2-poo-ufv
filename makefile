@@ -8,7 +8,7 @@ WARN=-Wall
 
 CCFLAGS=$(WARN)
 
-SRC= 
+SRC= Model/*/*/*
 
 all:
 	$(CCO) -o $(TARGET) $(SRC) Main.cpp $(CCFLAGS) -lm -O3
