@@ -7,6 +7,6 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    Person pessoa = Teacher("Mateus", "654", "rua ad", "centro", "sao jose", "356");
+    Person pessoa = Teacher("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
     return 0;
 }

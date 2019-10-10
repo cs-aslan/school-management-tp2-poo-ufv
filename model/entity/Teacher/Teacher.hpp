@@ -11,7 +11,7 @@ private:
     string area;
     double salaryPerHour;
 public:
-    Teacher(string name, string cpf, string street, string neighborhood, string city, string CEP);
+    Teacher(string name, string cpf, string street, string neighborhood, string city, string CEP, string area, double SalaryPerHour);
     ~Teacher();
 };
 
