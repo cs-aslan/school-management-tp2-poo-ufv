@@ -13,6 +13,12 @@ private:
 public:
     Teacher(string name, string cpf, string street, string neighborhood, string city, string CEP, string area, double SalaryPerHour);
     ~Teacher();
+
+    string getArea();
+    double getSalaryPerHour();
+
+    void setArea(string Area);
+    void setSalaryPerHour(double salaryPerHour);
 };
 
 #endif // TEACHER_HPP
