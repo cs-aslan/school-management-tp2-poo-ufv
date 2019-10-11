@@ -3,9 +3,11 @@ using namespace std;
 #include <iostream>
 #include <string>
 #include "Person.hpp"
+#include "../../../exception/BadArguments/BadArguments.hpp"
 
 Person::Person(string name, string cpf, string street, string neighborhood, string city, string CEP)
 {
+    throw BadArguments("CPF inválido!");
     this-> name = name;
     this-> cpf = cpf;
     this-> street = street;
