@@ -19,7 +19,7 @@ private:
     // Birth date
     
 public:
-    Person(string name, string cpf, string street, string neighborhood, string city, string CEP);
+    Person(string name, string cpf, string street, string neighborhood, string city, string CEP); // Throws BadArgument
     ~Person();
 
     string getName();
@@ -28,11 +28,12 @@ public:
     string getNeighborhood();
     string getCity();
     string getCEP();
+    string toString();
 
-    void setStreet(string street);
-    void setNeighborhood(string neighborhood);
-    void setCity(string city);
-    void setCEP(string CEP);
+    void setStreet(string street); // Throws BadArgument
+    void setNeighborhood(string neighborhood); // Throws BadArgument
+    void setCity(string city); // Throws BadArgument
+    void setCEP(string CEP); // Throws BadArgument
 };
 
 #endif // PERSON_HPP
