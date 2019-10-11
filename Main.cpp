@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 {
     try
     {
-        Person pessoa = Teacher("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
+        Teacher pessoa = Teacher("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
         cout << pessoa.toString() << endl;
     }
     catch(BadArgument& e)
