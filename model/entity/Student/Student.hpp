@@ -14,7 +14,7 @@ private:
     string fatherName;
     string motherName;
 public:
-    Student(string name, string cpf, string street, string neighborhood, string city, string CEP, string fatherName, string motherName, unsigned int registrationNumber);
+    Student(string name, string cpf, string street, string neighborhood, string city, string CEP, string fatherName, string motherName, unsigned int registrationNumber); // Throws BadArgument
     ~Student();
 
     unsigned int getRegistrationNumber();
