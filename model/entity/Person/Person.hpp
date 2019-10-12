@@ -5,35 +5,41 @@
 #include <iostream>
 #include <string>
 
-class Person
-{
-private:
-    std::string name;
-    std::string cpf;
+namespace model{
+    namespace entity {
 
-    std::string street;
-    std::string neighborhood;
-    std::string city;
-    std::string CEP;
+        class Person
+        {
+        private:
+            std::string name;
+            std::string cpf;
 
-    // Birth date
-    
-public:
-    Person(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP); // Throws BadArgument
-    ~Person();
+            std::string street;
+            std::string neighborhood;
+            std::string city;
+            std::string CEP;
 
-    std::string getName();
-    std::string getCpf();
-    std::string getStreet();
-    std::string getNeighborhood();
-    std::string getCity();
-    std::string getCEP();
-    std::string toString();
+            // Birth date
+            
+        public:
+            Person(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP); // Throws BadArgument
+            ~Person();
 
-    void setStreet(std::string street); // Throws BadArgument
-    void setNeighborhood(std::string neighborhood); // Throws BadArgument
-    void setCity(std::string city); // Throws BadArgument
-    void setCEP(std::string CEP); // Throws BadArgument
-};
+            std::string getName();
+            std::string getCpf();
+            std::string getStreet();
+            std::string getNeighborhood();
+            std::string getCity();
+            std::string getCEP();
+            std::string toString();
+
+            void setStreet(std::string street); // Throws BadArgument
+            void setNeighborhood(std::string neighborhood); // Throws BadArgument
+            void setCity(std::string city); // Throws BadArgument
+            void setCEP(std::string CEP); // Throws BadArgument
+            
+        };
+    }
+}
 
 #endif // PERSON_HPP

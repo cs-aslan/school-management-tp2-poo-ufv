@@ -5,7 +5,7 @@
 #include "Person.hpp"
 #include "../../../exception/BadArgument/BadArgument.hpp"
 
-Person::Person(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP) // Throws exception::BadArgument
+model::entity::Person::Person(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP) // Throws exception::BadArgument
 {
     if(name.empty() || cpf.empty() || street.empty() || neighborhood.empty() || city.empty() || CEP.empty())
         throw exception::BadArgument("Todos os parametros devem ser preenchidos!");
@@ -18,41 +18,41 @@ Person::Person(std::string name, std::string cpf, std::string street, std::strin
     this-> CEP = CEP;
 }
 
-Person::~Person()
+model::entity::Person::~Person()
 {
 }
 
-std::string Person::getName()
+std::string model::entity::Person::getName()
 {
     return this->name;
 }
 
-std::string Person::getCpf()
+std::string model::entity::Person::getCpf()
 {
     return this->cpf;
 }
 
-std::string Person::getStreet()
+std::string model::entity::Person::getStreet()
 {
     return this->street;
 }
 
-std::string Person::getNeighborhood()
+std::string model::entity::Person::getNeighborhood()
 {
     return this->neighborhood;
 }
 
-std::string Person::getCity()
+std::string model::entity::Person::getCity()
 {
     return this->city;
 }
 
-std::string Person::getCEP()
+std::string model::entity::Person::getCEP()
 {
     return this->CEP;
 }
 
-std::string Person::toString(){
+std::string model::entity::Person::toString(){
     return "Nome: " + this->name + "\n" +
             "CPF: " + this->cpf + "\n" +
             "Rua: " + this->street + "\n" +
@@ -62,7 +62,7 @@ std::string Person::toString(){
 }
 
 
-void Person::setStreet(std::string street) // Throws exception::BadArgument
+void model::entity::Person::setStreet(std::string street) // Throws exception::BadArgument
 {
     if(street.empty())
         throw exception::BadArgument("O parametro não pode ser vazio!");
@@ -70,7 +70,7 @@ void Person::setStreet(std::string street) // Throws exception::BadArgument
     this->street = street;
 }
 
-void Person::setNeighborhood(std::string neighborhood) // Throws exception::BadArgument
+void model::entity::Person::setNeighborhood(std::string neighborhood) // Throws exception::BadArgument
 {
     if(neighborhood.empty())
         throw exception::BadArgument("O parametro não pode ser vazio!");
@@ -78,7 +78,7 @@ void Person::setNeighborhood(std::string neighborhood) // Throws exception::BadA
     this->neighborhood = neighborhood;
 }
 
-void Person::setCity(std::string city) // Throws exception::BadArgument
+void model::entity::Person::setCity(std::string city) // Throws exception::BadArgument
 {
     if(city.empty())
         throw exception::BadArgument("O parametro não pode ser vazio!");
@@ -86,7 +86,7 @@ void Person::setCity(std::string city) // Throws exception::BadArgument
     this->city = city;
 }
 
-void Person::setCEP(std::string CEP) // Throws exception::BadArgument
+void model::entity::Person::setCEP(std::string CEP) // Throws exception::BadArgument
 {
     if(CEP.empty())
         throw exception::BadArgument("O parametro não pode ser vazio!");

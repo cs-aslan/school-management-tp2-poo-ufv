@@ -5,15 +5,15 @@
 
 namespace exception{
 
-class BadArgument
-{
-private:
-    std::string errorMessage;
-public:
-    BadArgument(std::string errorMessage);
-    ~BadArgument();
-    std::string what();
-};
+    class BadArgument
+    {
+    private:
+        std::string errorMessage;
+    public:
+        BadArgument(std::string errorMessage);
+        ~BadArgument();
+        std::string what();
+    };
 
 }
 
