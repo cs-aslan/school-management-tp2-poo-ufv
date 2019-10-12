@@ -1,14 +1,16 @@
 #include "BadArgument.hpp"
 
-BadArgument::BadArgument(string errorMessage)
+// using namespace std;
+
+exception::BadArgument::BadArgument(std::string errorMessage)
 {
     this->errorMessage = errorMessage;
 }
 
-BadArgument::~BadArgument()
+exception::BadArgument::~BadArgument()
 {
 }
 
-string BadArgument::what(){
+std::string exception::BadArgument::what(){
     return this->errorMessage;
 }

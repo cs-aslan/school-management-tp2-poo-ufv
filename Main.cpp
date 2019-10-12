@@ -1,4 +1,3 @@
-using namespace std;
 #include <iostream>
 #include <string>
 
@@ -11,11 +10,11 @@ int main(int argc, char const *argv[])
     try
     {
         Teacher pessoa = Teacher("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
-        cout << pessoa.toString() << endl;
+        std::cout << pessoa.toString() << std::endl;
     }
-    catch(BadArgument& e)
+    catch(exception::BadArgument& e)
     {
-        std::cerr << e.what() << endl;
+        std::cerr << e.what() << std::endl;
     }
     
     return 0;

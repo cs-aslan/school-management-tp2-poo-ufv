@@ -1,7 +1,7 @@
 #if !defined(STUDENT_HPP)
 #define STUDENT_HPP
 
-using namespace std;
+// using namespace std;
 #include <string>
 
 #include "../Person/Person.hpp"
@@ -11,15 +11,15 @@ class Student : public Person
 private:
     unsigned int registrationNumber;
 
-    string fatherName;
-    string motherName;
+    std::string fatherName;
+    std::string motherName;
 public:
-    Student(string name, string cpf, string street, string neighborhood, string city, string CEP, string fatherName, string motherName, unsigned int registrationNumber); // Throws BadArgument
+    Student(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName, unsigned int registrationNumber); // Throws BadArgument
     ~Student();
 
     unsigned int getRegistrationNumber();
-    string getFatherName();
-    string getMotherName();
+    std::string getFatherName();
+    std::string getMotherName();
 };
 
 #endif // STUDENT_HPP

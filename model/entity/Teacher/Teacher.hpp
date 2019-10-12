@@ -1,24 +1,24 @@
 #if !defined(TEACHER_HPP)
 #define TEACHER_HPP
 
-using namespace std;
+// using namespace std;
 #include <string>
 #include "../Person/Person.hpp"
 
 class Teacher : public Person
 {
 private:
-    string area;
+    std::string area;
     double salaryPerHour;
 public:
-    Teacher(string name, string cpf, string street, string neighborhood, string city, string CEP, string area, double SalaryPerHour); // Throws BadArgument
+    Teacher(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string area, double SalaryPerHour); // Throws BadArgument
     ~Teacher();
 
-    string getArea();
+    std::string getArea();
     double getSalaryPerHour();
-    string toString();
+    std::string toString();
 
-    void setArea(string area); // Throws BadArgument
+    void setArea(std::string area); // Throws BadArgument
     void setSalaryPerHour(double salaryPerHour); // Throws BadArgument
 };
 

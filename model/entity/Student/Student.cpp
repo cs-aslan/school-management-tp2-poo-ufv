@@ -1,12 +1,12 @@
-using namespace std;
+// using namespace std;
 
 #include "Student.hpp"
 #include "../../../exception/BadArgument/BadArgument.hpp"
 
-Student::Student(string name, string cpf, string street, string neighborhood, string city, string CEP, string fatherName, string motherName, unsigned int registrationNumber) : Person(name, cpf, street, neighborhood, city, CEP) // Throws BadArgument
+Student::Student(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName, unsigned int registrationNumber) : Person(name, cpf, street, neighborhood, city, CEP) // Throws BadArgument
 {
     if(fatherName.empty() || motherName.empty())
-        throw BadArgument("Todos os parametros devem ser preenchidos!");
+        throw exception::BadArgument("Todos os parametros devem ser preenchidos!");
 
     this->fatherName = fatherName;
     this->motherName = motherName;
@@ -22,12 +22,12 @@ unsigned int Student::getRegistrationNumber()
     return this->registrationNumber;
 }
 
-string Student::getFatherName()
+std::string Student::getFatherName()
 {
     return this->fatherName;
 }
 
-string Student::getMotherName()
+std::string Student::getMotherName()
 {
     return this->motherName;
 }

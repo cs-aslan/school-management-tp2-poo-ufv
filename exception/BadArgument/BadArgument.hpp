@@ -1,17 +1,20 @@
 #if !defined(BADARGUMENT_HPP)
 #define BADARGUMENTS_HPP
 
-using namespace std;
 #include <string>
+
+namespace exception{
 
 class BadArgument
 {
 private:
-    string errorMessage;
+    std::string errorMessage;
 public:
-    BadArgument(string errorMessage);
+    BadArgument(std::string errorMessage);
     ~BadArgument();
-    string what();
+    std::string what();
 };
+
+}
 
 #endif // BADARGUMENT_HPP

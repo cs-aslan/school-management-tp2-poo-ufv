@@ -1,39 +1,39 @@
 #if !defined(PERSON_HPP)
 #define PERSON_HPP
 
-using namespace std;
+// using namespace std;
 #include <iostream>
 #include <string>
 
 class Person
 {
 private:
-    string name;
-    string cpf;
+    std::string name;
+    std::string cpf;
 
-    string street;
-    string neighborhood;
-    string city;
-    string CEP;
+    std::string street;
+    std::string neighborhood;
+    std::string city;
+    std::string CEP;
 
     // Birth date
     
 public:
-    Person(string name, string cpf, string street, string neighborhood, string city, string CEP); // Throws BadArgument
+    Person(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP); // Throws BadArgument
     ~Person();
 
-    string getName();
-    string getCpf();
-    string getStreet();
-    string getNeighborhood();
-    string getCity();
-    string getCEP();
-    string toString();
+    std::string getName();
+    std::string getCpf();
+    std::string getStreet();
+    std::string getNeighborhood();
+    std::string getCity();
+    std::string getCEP();
+    std::string toString();
 
-    void setStreet(string street); // Throws BadArgument
-    void setNeighborhood(string neighborhood); // Throws BadArgument
-    void setCity(string city); // Throws BadArgument
-    void setCEP(string CEP); // Throws BadArgument
+    void setStreet(std::string street); // Throws BadArgument
+    void setNeighborhood(std::string neighborhood); // Throws BadArgument
+    void setCity(std::string city); // Throws BadArgument
+    void setCEP(std::string CEP); // Throws BadArgument
 };
 
 #endif // PERSON_HPP

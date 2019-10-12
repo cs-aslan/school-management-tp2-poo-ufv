@@ -1,14 +1,14 @@
-using namespace std;
+// using namespace std;
 
 #include <iostream>
 #include <string>
 #include "Person.hpp"
 #include "../../../exception/BadArgument/BadArgument.hpp"
 
-Person::Person(string name, string cpf, string street, string neighborhood, string city, string CEP) // Throws BadArgument
+Person::Person(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP) // Throws exception::BadArgument
 {
     if(name.empty() || cpf.empty() || street.empty() || neighborhood.empty() || city.empty() || CEP.empty())
-        throw BadArgument("Todos os parametros devem ser preenchidos!");
+        throw exception::BadArgument("Todos os parametros devem ser preenchidos!");
 
     this-> name = name;
     this-> cpf = cpf;
@@ -22,37 +22,37 @@ Person::~Person()
 {
 }
 
-string Person::getName()
+std::string Person::getName()
 {
     return this->name;
 }
 
-string Person::getCpf()
+std::string Person::getCpf()
 {
     return this->cpf;
 }
 
-string Person::getStreet()
+std::string Person::getStreet()
 {
     return this->street;
 }
 
-string Person::getNeighborhood()
+std::string Person::getNeighborhood()
 {
     return this->neighborhood;
 }
 
-string Person::getCity()
+std::string Person::getCity()
 {
     return this->city;
 }
 
-string Person::getCEP()
+std::string Person::getCEP()
 {
     return this->CEP;
 }
 
-string Person::toString(){
+std::string Person::toString(){
     return "Nome: " + this->name + "\n" +
             "CPF: " + this->cpf + "\n" +
             "Rua: " + this->street + "\n" +
@@ -62,34 +62,34 @@ string Person::toString(){
 }
 
 
-void Person::setStreet(string street) // Throws BadArgument
+void Person::setStreet(std::string street) // Throws exception::BadArgument
 {
     if(street.empty())
-        throw BadArgument("O parametro não pode ser vazio!");
+        throw exception::BadArgument("O parametro não pode ser vazio!");
         
     this->street = street;
 }
 
-void Person::setNeighborhood(string neighborhood) // Throws BadArgument
+void Person::setNeighborhood(std::string neighborhood) // Throws exception::BadArgument
 {
     if(neighborhood.empty())
-        throw BadArgument("O parametro não pode ser vazio!");
+        throw exception::BadArgument("O parametro não pode ser vazio!");
         
     this->neighborhood = neighborhood;
 }
 
-void Person::setCity(string city) // Throws BadArgument
+void Person::setCity(std::string city) // Throws exception::BadArgument
 {
     if(city.empty())
-        throw BadArgument("O parametro não pode ser vazio!");
+        throw exception::BadArgument("O parametro não pode ser vazio!");
 
     this->city = city;
 }
 
-void Person::setCEP(string CEP) // Throws BadArgument
+void Person::setCEP(std::string CEP) // Throws exception::BadArgument
 {
     if(CEP.empty())
-        throw BadArgument("O parametro não pode ser vazio!");
+        throw exception::BadArgument("O parametro não pode ser vazio!");
 
     this->CEP = CEP;
 }
