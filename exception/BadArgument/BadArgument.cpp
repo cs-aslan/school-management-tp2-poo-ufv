@@ -1,7 +1,5 @@
 #include "BadArgument.hpp"
 
-// using namespace std;
-
 exception::BadArgument::BadArgument(std::string errorMessage)
 {
     this->errorMessage = errorMessage;

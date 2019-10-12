@@ -1,5 +1,5 @@
-#if !defined(PERSON_HPP)
-#define PERSON_HPP
+#if !defined(MODEL_ENTITY_PERSON_HPP)
+#define MODEL_ENTITY_PERSON_HPP
 
 #include "../../../exception/BadArgument/BadArgument.hpp"
 #include <iostream>
@@ -44,4 +44,4 @@ namespace model{
     
 } // namespace model
 
-#endif // PERSON_HPP
+#endif // MODEL_ENTITY_PERSON_HPP

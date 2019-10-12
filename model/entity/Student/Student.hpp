@@ -1,5 +1,5 @@
-#if !defined(STUDENT_HPP)
-#define STUDENT_HPP
+#if !defined(MODEL_ENTITYSTUDENT_HPP)
+#define MODEL_ENTITYSTUDENT_HPP
 
 #include "../../../exception/BadArgument/BadArgument.hpp"
 #include <iostream>
@@ -30,4 +30,4 @@ namespace model{
     
 } // namespace model
 
-#endif // STUDENT_HPP
+#endif // MODEL_ENTITYSTUDENT_HPP

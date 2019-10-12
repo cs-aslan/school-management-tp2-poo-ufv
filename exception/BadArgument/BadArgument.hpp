@@ -1,5 +1,5 @@
-#if !defined(BADARGUMENT_HPP)
-#define BADARGUMENTS_HPP
+#if !defined(EXCEPTION_BADARGUMENT_HPP)
+#define EXCEPTION_BADARGUMENT_HPP
 
 #include <string>
 
@@ -17,4 +17,4 @@ namespace exception{
 
 }
 
-#endif // BADARGUMENT_HPP
+#endif // EXCEPTION_BADARGUMENT_HPP

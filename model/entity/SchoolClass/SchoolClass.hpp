@@ -1,5 +1,5 @@
-#if !defined(SCHOLLCLASS_HPP)
-#define SCHOLLCLASS_HPP
+#if !defined(MODEL_ENTITY_SCHOLLCLASS_HPP)
+#define MODEL_ENTITY_SCHOLLCLASS_HPP
 
 #include "../../../exception/BadArgument/BadArgument.hpp"
 #include "../EnrolledStudent/EnrolledStudent.hpp"
@@ -28,4 +28,4 @@ namespace model
 } // namespace model
 
 
-#endif // SCHOLLCLASS_HPP
+#endif // MODEL_ENTITY_SCHOLLCLASS_HPP
