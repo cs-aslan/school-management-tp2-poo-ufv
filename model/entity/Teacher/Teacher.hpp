@@ -25,7 +25,8 @@ namespace model {
                 void setSalaryPerHour(double salaryPerHour); // Throws BadArgument
             };
 
-    }
-}
+    } // namespace entity
+    
+} // namespace model
 
 #endif // TEACHER_HPP

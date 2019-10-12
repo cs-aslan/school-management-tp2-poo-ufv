@@ -1,7 +1,4 @@
-// using namespace std;
-
 #include "Student.hpp"
-#include "../../../exception/BadArgument/BadArgument.hpp"
 
 model::entity::Student::Student(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName, unsigned int registrationNumber) : model::entity::Person(name, cpf, street, neighborhood, city, CEP) // Throws BadArgument
 {

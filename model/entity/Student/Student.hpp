@@ -1,7 +1,8 @@
 #if !defined(STUDENT_HPP)
 #define STUDENT_HPP
 
-// using namespace std;
+#include "../../../exception/BadArgument/BadArgument.hpp"
+#include <iostream>
 #include <string>
 
 #include "../Person/Person.hpp"
@@ -24,8 +25,9 @@ namespace model{
                 std::string getFatherName();
                 std::string getMotherName();
             };
-            
-    }
-}
+
+    } // namespace entity
+    
+} // namespace model
 
 #endif // STUDENT_HPP

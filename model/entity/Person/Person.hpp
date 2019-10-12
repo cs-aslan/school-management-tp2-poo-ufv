@@ -1,7 +1,7 @@
 #if !defined(PERSON_HPP)
 #define PERSON_HPP
 
-// using namespace std;
+#include "../../../exception/BadArgument/BadArgument.hpp"
 #include <iostream>
 #include <string>
 
@@ -37,9 +37,11 @@ namespace model{
             void setNeighborhood(std::string neighborhood); // Throws BadArgument
             void setCity(std::string city); // Throws BadArgument
             void setCEP(std::string CEP); // Throws BadArgument
-            
+
         };
-    }
-}
+
+    } // namespace entity
+    
+} // namespace model
 
 #endif // PERSON_HPP

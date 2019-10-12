@@ -1,9 +1,4 @@
-// using namespace std;
-
-#include <iostream>
-#include <string>
 #include "Person.hpp"
-#include "../../../exception/BadArgument/BadArgument.hpp"
 
 model::entity::Person::Person(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP) // Throws exception::BadArgument
 {
