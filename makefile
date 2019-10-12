@@ -8,7 +8,7 @@ WARN=-Wall
 
 CCFLAGS=$(WARN)
 
-SRC= model/*/*/* exception/*/*
+SRC= model/*/*/*.cpp exception/*/*.cpp controller/*/*.cpp
 
 all:
 	$(CCO) -o $(TARGET) $(SRC) Main.cpp $(CCFLAGS) -lm -O3

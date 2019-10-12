@@ -5,6 +5,7 @@
 #include "model/entity/Teacher/Teacher.hpp"
 #include "model/persistence/DAOTeacher/DAOTeacher.hpp"
 #include "exception/BadArgument/BadArgument.hpp"
+#include "exception/PersistenceError/PersistenceError.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -15,7 +16,7 @@ int main(int argc, char const *argv[])
         professores.insert("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
         std::cout << professores.search("654").toString() << "\n";
     }
-    catch(exception::BadArgument& e)
+    catch(exception::PersistenceError& e)
     {
         std::cerr << e.what() << std::endl;
     }
