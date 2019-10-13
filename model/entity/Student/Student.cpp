@@ -8,6 +8,7 @@ model::entity::Student::Student(std::string name, std::string cpf, std::string s
     this->fatherName = fatherName;
     this->motherName = motherName;
     this->registrationNumber = registrationNumber;
+    this->active = true;
 }
 
 model::entity::Student::~Student()

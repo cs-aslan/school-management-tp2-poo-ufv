@@ -17,6 +17,8 @@ namespace model{
 
                 std::string fatherName;
                 std::string motherName;
+
+                bool active;
             public:
                 Student(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName, unsigned int registrationNumber); // Throws BadArgument
                 ~Student();

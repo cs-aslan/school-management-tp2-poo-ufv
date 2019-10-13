@@ -1,7 +1,4 @@
-// using namespace std;
-
 #include "Teacher.hpp"
-#include "../../../exception/BadArgument/BadArgument.hpp"
 
 model::entity::Teacher::Teacher(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string area, double salaryPerHour): model::entity::Person(name, cpf, street, neighborhood, city, CEP) // Throws BadArgument
 {
@@ -10,6 +7,7 @@ model::entity::Teacher::Teacher(std::string name, std::string cpf, std::string s
 
     this->area = area;
     this->salaryPerHour = salaryPerHour;
+    this->active = true;
 }
 
 model::entity::Teacher::~Teacher()

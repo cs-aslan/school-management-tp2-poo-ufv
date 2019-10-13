@@ -1,9 +1,9 @@
 #if !defined(TEACHER_HPP)
 #define TEACHER_HPP
 
-// using namespace std;
 #include <string>
 #include "../Person/Person.hpp"
+#include "../../../exception/BadArgument/BadArgument.hpp"
 
 namespace model {
     namespace entity{
@@ -13,6 +13,7 @@ namespace model {
             private:
                 std::string area;
                 double salaryPerHour;
+                bool active;
             public:
                 Teacher(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string area, double SalaryPerHour); // Throws BadArgument
                 ~Teacher();
