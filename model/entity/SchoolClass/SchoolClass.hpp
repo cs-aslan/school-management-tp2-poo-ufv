@@ -17,12 +17,15 @@ namespace model
             unsigned int code;
             std::string teacherCPF;
             unsigned int year;
-            std::list<EnrolledStudent> enrolledStudent;
+            std::list<model::entity::EnrolledStudent> enrolledStudent;
         public:
             SchoolClass(unsigned int code, unsigned int year, std::string teacherCPF);  // Throws BadArgument
             ~SchoolClass();
 
             unsigned int getCode();
+            std::string getTeacherCPF();
+            unsigned int getYear();
+            std::list<model::entity::EnrolledStudent> & getAllEnrolledStudents();
         };
         
     } // namespace entity

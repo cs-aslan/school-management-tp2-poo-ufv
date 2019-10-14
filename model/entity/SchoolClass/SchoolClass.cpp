@@ -19,3 +19,18 @@ unsigned int model::entity::SchoolClass::getCode()
 {
     return this->code;
 }
+
+std::string model::entity::SchoolClass::getTeacherCPF()
+{
+    return this->teacherCPF;
+}
+
+unsigned int model::entity::SchoolClass::getYear()
+{
+    return this->year;
+}
+
+std::list<model::entity::EnrolledStudent>& model::entity::SchoolClass::getAllEnrolledStudents()
+{
+    return this->enrolledStudent;
+}
