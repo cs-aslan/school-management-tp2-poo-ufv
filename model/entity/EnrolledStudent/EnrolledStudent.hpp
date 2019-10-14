@@ -19,6 +19,11 @@ namespace model
         public:
             EnrolledStudent(std::string CPF);  // Throws BadArgument
             ~EnrolledStudent();
+
+            std::string getCPF();
+            std::vector<double>& getGrades();
+            
+            void setGrade(int position, double grade);
         };
         
     } // namespace entity

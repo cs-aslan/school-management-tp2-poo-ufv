@@ -3,6 +3,7 @@
 
 #include "model/entity/Person/Person.hpp"
 #include "model/entity/Teacher/Teacher.hpp"
+#include "model/entity/EnrolledStudent/EnrolledStudent.hpp"
 #include "model/persistence/DAOTeacher/DAOTeacher.hpp"
 #include "exception/BadArgument/BadArgument.hpp"
 #include "exception/PersistenceError/PersistenceError.hpp"
@@ -16,10 +17,8 @@ int main(int argc, char const *argv[])
 {
     try
     {
-        controller::StudentController alunos = controller::StudentController();
-        
-        view::student::insert(alunos);
-        view::student::print(alunos);
+        model::entity::EnrolledStudent estudante = model::entity::EnrolledStudent("106");
+        estudante.setGrade(3, 3.5);
     }
     catch(exception::BusinessRule& e)
     {
