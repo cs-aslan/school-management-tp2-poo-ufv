@@ -14,3 +14,8 @@ model::entity::SchoolClass::SchoolClass(unsigned int code, unsigned int year, st
 model::entity::SchoolClass::~SchoolClass()
 {
 }
+
+unsigned int model::entity::SchoolClass::getCode()
+{
+    return this->code;
+}
