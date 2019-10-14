@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include "../AuxViewer/AuxViewer.hpp"
 #include "../../controller/TeacherController/TeacherController.hpp"
 
 namespace view

@@ -8,7 +8,7 @@ void view::teacher::print(controller::TeacherController & teacherController)
 
     for (it = list.begin(); it != list.end(); it++)
     {
-        std::cout << it->toString() << "\n-----------------------------------------------\n";
+        std::cout << it->toString() << "\n" << view::aux::separator();
     
     }
 }
@@ -19,7 +19,7 @@ void view::teacher::insert(controller::TeacherController & teacherController)
     {
         std::string salaryPerHourSwap;
 
-        std::cout << "\n-----------------------------------------------\n";
+        std::cout << view::aux::separator();
 
         std::cout << "Insira o nome do professor: ";
         std::string name;
@@ -64,5 +64,5 @@ void view::teacher::insert(controller::TeacherController & teacherController)
         std::cerr << e.what() << std::endl;
     }
 
-    std::cout << "\n-----------------------------------------------\n";
+    std::cout << view::aux::separator();
 }
