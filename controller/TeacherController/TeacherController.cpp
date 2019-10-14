@@ -25,3 +25,28 @@ void controller::TeacherController::insert(std::string name, std::string cpf, st
 std::list<model::entity::Teacher>& controller::TeacherController::getAll(){
     return this-> persistence.getAll();
 }
+
+void controller::TeacherController::setStreet(std::string cpf, std::string street) // Throws BadArgument, Persistence Error
+{
+    this->persistence.search(cpf).setStreet(street);
+}
+
+void controller::TeacherController::setNeighborhood(std::string cpf, std::string neighborhood) // Throws BadArgument, Persistence Error
+{
+    this->persistence.search(cpf).setNeighborhood(neighborhood);
+}
+
+void controller::TeacherController::setCity(std::string cpf, std::string city) // Throws BadArgument, Persistence Error
+{
+    this->persistence.search(cpf).setCity(city);
+}
+
+void controller::TeacherController::setCEP(std::string cpf, std::string CEP) // Throws BadArgument, Persistence Error
+{
+    this->persistence.search(cpf).setCEP(CEP);
+}
+
+void controller::TeacherController::setActive(std::string cpf, bool active) // Throws Persistence Error
+{
+    this->persistence.search(cpf).setActive(active);
+}

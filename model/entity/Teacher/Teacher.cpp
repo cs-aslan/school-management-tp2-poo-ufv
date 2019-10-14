@@ -47,3 +47,7 @@ void model::entity::Teacher::setSalaryPerHour(double salaryPerHour) // Throws ex
 {
     this->salaryPerHour = salaryPerHour;
 }
+
+void model::entity::Teacher::setActive(bool active){
+    this->active = active;
+}

@@ -17,10 +17,14 @@ int main(int argc, char const *argv[])
         controller::TeacherController professores = controller::TeacherController();
         
         view::teacher::insert(professores);
-        view::teacher::insert(professores);
+        professores.setNeighborhood("1","Centro");
         view::teacher::print(professores);
     }
     catch(exception::BusinessRule& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(exception::PersistenceError& e)
     {
         std::cerr << e.what() << std::endl;
     }

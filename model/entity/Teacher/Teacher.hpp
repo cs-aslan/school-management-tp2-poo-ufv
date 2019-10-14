@@ -25,6 +25,7 @@ namespace model {
 
                 void setArea(std::string area); // Throws BadArgument
                 void setSalaryPerHour(double salaryPerHour); // Throws BadArgument
+                void setActive(bool active);
             };
 
     } // namespace entity
