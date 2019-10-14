@@ -10,7 +10,8 @@ namespace view
 {
     namespace teacher
     {
-        void printTeachers(controller::TeacherController teacherController);
+        void print(controller::TeacherController & teacherController);
+        void insert(controller::TeacherController & teacherController);
     }
 
 }
