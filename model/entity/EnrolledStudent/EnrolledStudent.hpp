@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <vector>
 
 namespace model
 {
@@ -14,7 +15,7 @@ namespace model
         {
         private:
             std::string CPF;
-            std::list<double> grades;
+            std::vector<double> grades;
         public:
             EnrolledStudent(std::string CPF);  // Throws BadArgument
             ~EnrolledStudent();
