@@ -17,9 +17,8 @@ int main(int argc, char const *argv[])
         controller::TeacherController professores = controller::TeacherController();
         
         view::teacher::insert(professores);
+        view::teacher::insert(professores);
         view::teacher::print(professores);
-        professores.insert("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
-       // std::cout << professores.search("654").toString() << "\n";
     }
     catch(exception::BusinessRule& e)
     {

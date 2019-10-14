@@ -8,7 +8,7 @@ void view::teacher::print(controller::TeacherController & teacherController)
 
     for (it = list.begin(); it != list.end(); it++)
     {
-        std::cout << it->toString();
+        std::cout << it->toString() << "\n-----------------------------------------------\n";
     
     }
 }
@@ -17,37 +17,41 @@ void view::teacher::insert(controller::TeacherController & teacherController)
 {
     try
     {
-        std::cout << "\nInsira o nome do professor: ";
+        std::string salaryPerHourSwap;
+
+        std::cout << "\n-----------------------------------------------\n";
+
+        std::cout << "Insira o nome do professor: ";
         std::string name;
-        std::cin >> name;
+        getline(std::cin, name, '\n');
 
-        std::cout << "\nInsira o cpf: ";
+        std::cout << "Insira o cpf: ";
         std::string cpf;
-        std::cin >> cpf;
+        getline(std::cin, cpf, '\n');
 
-        std::cout << "\nInsira a rua: ";
+        std::cout << "Insira a rua: ";
         std::string street;
-        std::cin >> street;
+        getline(std::cin, street, '\n');
 
-        std::cout << "\nInsira o bairro: ";
+        std::cout << "Insira o bairro: ";
         std::string neighborhood;
-        std::cin >> neighborhood;
+        getline(std::cin, neighborhood, '\n');
 
-        std::cout << "\nInsira a cidade: ";
+        std::cout << "Insira a cidade: ";
         std::string city;
-        std::cin >> city;
+        getline(std::cin, city, '\n');
 
-        std::cout << "\nInsira o CEP: ";
+        std::cout << "Insira o CEP: ";
         std::string CEP;
-        std::cin >> CEP;
+        getline(std::cin, CEP, '\n');
 
-        std::cout << "\nInsira a area de estudo: ";
+        std::cout << "Insira a area de estudo: ";
         std::string area;
-        std::cin >> area;
+        getline(std::cin, area, '\n');
 
-        std::cout << "\nInsira o salario por hora: ";
-        double salaryPerHour;
-        std::cin >> salaryPerHour;
+        std::cout << "Insira o salario por hora: ";
+        getline(std::cin, salaryPerHourSwap, '\n');
+        double salaryPerHour = std::stod(salaryPerHourSwap);
 
         teacherController.insert(name, cpf, street, neighborhood, city, CEP, area, salaryPerHour);
     }
@@ -59,4 +63,6 @@ void view::teacher::insert(controller::TeacherController & teacherController)
     {
         std::cerr << e.what() << std::endl;
     }
+
+    std::cout << "\n-----------------------------------------------\n";
 }
