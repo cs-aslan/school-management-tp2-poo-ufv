@@ -21,3 +21,7 @@ void controller::TeacherController::insert(std::string name, std::string cpf, st
     }
     
 }
+
+std::list<model::entity::Teacher>& controller::TeacherController::getAll(){
+    return this-> persistence.getAll();
+}

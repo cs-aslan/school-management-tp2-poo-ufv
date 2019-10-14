@@ -21,6 +21,7 @@ namespace model {
                 std::string getArea();
                 double getSalaryPerHour();
                 std::string toString();
+                bool isActive();
 
                 void setArea(std::string area); // Throws BadArgument
                 void setSalaryPerHour(double salaryPerHour); // Throws BadArgument

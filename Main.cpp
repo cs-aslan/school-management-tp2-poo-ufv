@@ -8,6 +8,7 @@
 #include "exception/PersistenceError/PersistenceError.hpp"
 #include "exception/BusinessRule/BusinessRule.hpp"
 #include "controller/TeacherController/TeacherController.hpp"
+#include "View/TeacherViewer/TeacherViewer.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -16,6 +17,7 @@ int main(int argc, char const *argv[])
         controller::TeacherController professores = controller::TeacherController();
         
         professores.insert("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
+        view::teacher::printTeachers(professores);
         professores.insert("Mateus", "654", "rua ad", "centro", "sao jose", "356", "math", 90);
        // std::cout << professores.search("654").toString() << "\n";
     }

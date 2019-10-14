@@ -30,6 +30,10 @@ std::string model::entity::Teacher::toString(){
             "Salário por hora: " + std::to_string(this->salaryPerHour);
 }
 
+bool model::entity::Teacher::isActive(){
+    return this->active;
+}
+
 
 void model::entity::Teacher::setArea(std::string area) // Throws exception::BadArgument
 {

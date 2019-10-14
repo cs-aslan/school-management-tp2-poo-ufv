@@ -41,3 +41,7 @@ model::entity::Teacher & model::persistence::DAOTeacher::search(std::string CPF)
 
 //     throw exception::PersistenceError("Valor nao encontrado no banco!");
 // }
+
+std::list<model::entity::Teacher>& model::persistence::DAOTeacher::getAll(){
+    return this-> persistence;
+}
