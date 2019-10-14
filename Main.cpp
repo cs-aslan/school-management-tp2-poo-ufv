@@ -8,17 +8,18 @@
 #include "exception/PersistenceError/PersistenceError.hpp"
 #include "exception/BusinessRule/BusinessRule.hpp"
 #include "controller/TeacherController/TeacherController.hpp"
-#include "View/TeacherViewer/TeacherViewer.hpp"
+#include "controller/StudentController/StudentController.hpp"
+#include "view/TeacherViewer/TeacherViewer.hpp"
+#include "view/StudentViewer/StudentViewer.hpp"
 
 int main(int argc, char const *argv[])
 {
     try
     {
-        controller::TeacherController professores = controller::TeacherController();
+        controller::StudentController alunos = controller::StudentController();
         
-        view::teacher::insert(professores);
-        professores.setNeighborhood("1","Centro");
-        view::teacher::print(professores);
+        view::student::insert(alunos);
+        view::student::print(alunos);
     }
     catch(exception::BusinessRule& e)
     {

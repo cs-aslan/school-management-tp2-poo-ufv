@@ -29,3 +29,15 @@ std::string model::entity::Student::getMotherName()
 {
     return this->motherName;
 }
+
+std::string model::entity::Student::toString()
+{
+    return Person::toString() + "\n" +
+            "Nome do pai: " + this->fatherName + "\n" +
+            "Nome da mae: " + this->motherName + "\n" +
+            "Numero de matricula: " + std::to_string(this->registrationNumber);
+}
+
+void model::entity::Student::setActive(bool active){
+    this->active = active;
+}

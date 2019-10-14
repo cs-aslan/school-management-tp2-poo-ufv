@@ -26,6 +26,9 @@ namespace model{
                 unsigned int getRegistrationNumber();
                 std::string getFatherName();
                 std::string getMotherName();
+                std::string toString();
+
+                void setActive(bool active);
             };
 
     } // namespace entity
