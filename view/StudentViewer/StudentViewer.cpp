@@ -1,5 +1,13 @@
 #include "StudentViewer.hpp"
 
+std::string view::student::menu(){
+    return view::aux::separator() +
+    "1- Inserir novo aluno\n" +
+    "2- Listar todos os alunos\n" +
+    view::aux::separator();
+}
+
+
 void view::student::print(controller::StudentController & controller)
 {
     std::list<model::entity::Student> list = controller.getAll();

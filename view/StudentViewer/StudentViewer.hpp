@@ -11,6 +11,7 @@ namespace view
 {
     namespace student
     {
+        std::string menu();
         void print(controller::StudentController & controller);
         void insert(controller::StudentController & controller);
     }

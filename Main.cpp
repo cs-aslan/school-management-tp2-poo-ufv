@@ -21,11 +21,17 @@ int main(int argc, char const *argv[])
 
     std::cout << view::main::mainMenu();
 
+    std::string selectionMainMenuAux;
+    std::string selectionSubMenuAux;
+
     int selectionMainMenu;
-    std::cin >> selectionMainMenu;
+    int selectionSubMenu;
 
     while (1)
     {
+        getline(std::cin, selectionMainMenuAux, '\n');
+        selectionMainMenu = stoi(selectionMainMenuAux);
+
         switch (selectionMainMenu)
         {
         case 0:
@@ -33,7 +39,35 @@ int main(int argc, char const *argv[])
             break;
 
         case 1:
-            /* code */
+            
+            std::cout << view::student::menu();
+
+            getline(std::cin, selectionSubMenuAux, '\n');
+            selectionSubMenu = stoi(selectionSubMenuAux);
+
+            switch (selectionSubMenu)
+            {
+
+            case 1:
+                try
+                {
+                    view::student::insert(studentController);
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                }
+                break;
+
+            case 2:
+                view::student::print(studentController);
+                break;
+            
+            default:
+                std::cout << "Opcao invalida, voltando ao menu principal...\n";
+                break;
+            }
+            std::cout << view::main::reShowMenu();
             break;
         
         case 9:
@@ -44,8 +78,6 @@ int main(int argc, char const *argv[])
             std::cout << view::main::reShowMenu();
             break;
         }
-
-        std::cin >> selectionMainMenu;
     }
     
     return 0;
