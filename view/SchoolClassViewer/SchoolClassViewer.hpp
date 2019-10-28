@@ -14,6 +14,8 @@ namespace view
         std::string menu();
         void print(controller::SchoolClassController & controller);
         void insert(controller::SchoolClassController & controller, controller::TeacherController & teacherController);
+        void insertEnrolledStudent(controller::SchoolClassController & controller, controller::StudentController & studentController);
+        void setGrade(controller::SchoolClassController & controller);
     }
 
 }

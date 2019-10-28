@@ -2,8 +2,10 @@
 
 std::string view::schoolClass::menu(){
     return view::aux::separator() +
-    "1- Inserir nova turma\n" +
+    "1- Criar nova turma vazia\n" +
     "2- Listar todas as turmas\n" +
+    "3- Inserir aluno em uma turma\n" +
+    "4- Definir nota de um aluno em uma turma\n" +
     view::aux::separator();
 }
 
@@ -47,4 +49,56 @@ void view::schoolClass::insert(controller::SchoolClassController & schoolClassCo
     }
 
     std::cout << view::aux::separator();
+}
+
+void insertEnrolledStudent(controller::SchoolClassController & controller, controller::StudentController & studentController){
+    try
+    {
+        std::cout << "Insira o codigo da turma: ";
+        std::string classCodeAux;
+        getline(std::cin, classCodeAux, '\n');
+        unsigned int classCode = std::stoi(classCodeAux);
+
+        std::cout << "Insira o cpf do aluno: ";
+        std::string enrolledStudentCPF;
+        getline(std::cin, enrolledStudentCPF, '\n');
+
+        controller.insertEnrolledStudent(classCode, enrolledStudentCPF, studentController);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+}
+
+void setGrade(controller::SchoolClassController & controller){
+    try
+    {
+        std::cout << "Insira o codigo da turma: ";
+        std::string classCodeAux;
+        getline(std::cin, classCodeAux, '\n');
+        unsigned int classCode = std::stoi(classCodeAux);
+
+        std::cout << "Insira o cpf do aluno: ";
+        std::string enrolledStudentCPF;
+        getline(std::cin, enrolledStudentCPF, '\n');
+
+        std::cout << "Insira o numero do bimestre (1 a 4): ";
+        std::string gradeNumberAux;
+        getline(std::cin, gradeNumberAux, '\n');
+        unsigned int gradeNumber = std::stoi(gradeNumberAux);
+
+        std::cout << "Insira a nota do bimestre (1 a 4): ";
+        std::string gradeValueAux;
+        getline(std::cin, gradeValueAux, '\n');
+        double gradeValue = std::stod(gradeValueAux);
+
+        controller.setGradeEnrolledStudent(classCode, enrolledStudentCPF, gradeValue, gradeNumber);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }

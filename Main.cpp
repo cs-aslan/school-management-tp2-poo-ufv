@@ -104,6 +104,14 @@ int main(int argc, char const *argv[])
             case 2:
                 view::schoolClass::print(schoolClassController);
                 break;
+
+            case 3:
+                view::schoolClass::insertEnrolledStudent(schoolClassController, studentController);
+                break;
+
+            case 4:
+                view::schoolClass::setGrade(schoolClassController);
+                break;
             
             default:
                 std::cout << "Opcao invalida, voltando ao menu principal...\n";
