@@ -27,8 +27,21 @@ int main(int argc, char const *argv[])
 
     while (1)
     {
-        getline(std::cin, selectionMainMenuAux, '\n');
-        selectionMainMenu = stoi(selectionMainMenuAux);
+        while (1)
+        {
+            try
+            {
+                getline(std::cin, selectionMainMenuAux, '\n');
+                selectionMainMenu = stoi(selectionMainMenuAux);
+                break;
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << "Insira um numero!\n";
+            }
+            
+        }
+        
 
         switch (selectionMainMenu)
         {
@@ -40,8 +53,20 @@ int main(int argc, char const *argv[])
             
             std::cout << view::student::menu();
 
-            getline(std::cin, selectionSubMenuAux, '\n');
-            selectionSubMenu = stoi(selectionSubMenuAux);
+            while (1)
+            {
+                try
+                {
+                    getline(std::cin, selectionSubMenuAux, '\n');
+                    selectionSubMenu = stoi(selectionSubMenuAux);
+                    break;
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << "Insira um numero!\n";
+                }
+                
+            }
 
             switch (selectionSubMenu)
             {
@@ -85,8 +110,20 @@ int main(int argc, char const *argv[])
 
             std::cout << view::teacher::menu();
 
-            getline(std::cin, selectionSubMenuAux, '\n');
-            selectionSubMenu = stoi(selectionSubMenuAux);
+            while (1)
+            {
+                try
+                {
+                    getline(std::cin, selectionSubMenuAux, '\n');
+                    selectionSubMenu = stoi(selectionSubMenuAux);
+                    break;
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << "Insira um numero!\n";
+                }
+                
+            }
 
             switch (selectionSubMenu)
             {
@@ -138,8 +175,20 @@ int main(int argc, char const *argv[])
 
             std::cout << view::schoolClass::menu();
 
-            getline(std::cin, selectionSubMenuAux, '\n');
-            selectionSubMenu = stoi(selectionSubMenuAux);
+            while (1)
+            {
+                try
+                {
+                    getline(std::cin, selectionSubMenuAux, '\n');
+                    selectionSubMenu = stoi(selectionSubMenuAux);
+                    break;
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << "Insira um numero!\n";
+                }
+                
+            }
 
             switch (selectionSubMenu)
             {
@@ -169,7 +218,7 @@ int main(int argc, char const *argv[])
             break;
 
         case 4:
-            view::reportCard::createReportCard(schoolClassController, studentController);
+            std::cout << view::reportCard::createReportCard(schoolClassController, studentController);
             std::cout << view::main::reShowMenu();
             break;
 

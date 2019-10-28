@@ -38,7 +38,7 @@ std::string controller::ReportCardController::createReportCard(unsigned int clas
             if(gradeMean>=60) toBeReturned += "APROVADO";
             else toBeReturned += "REPROVADO";
 
-            toBeReturned += "----------------------------------------------\n";
+            toBeReturned += "\n----------------------------------------------\n";
         
         }
 
