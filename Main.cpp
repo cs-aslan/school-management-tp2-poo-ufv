@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string>
 
-#include "exception/BadArgument/BadArgument.hpp"
-#include "exception/PersistenceError/PersistenceError.hpp"
-#include "exception/BusinessRule/BusinessRule.hpp"
-
 #include "controller/TeacherController/TeacherController.hpp"
 #include "controller/StudentController/StudentController.hpp"
 #include "controller/SchoolClassController/SchoolClassController.hpp"
