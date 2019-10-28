@@ -1,5 +1,12 @@
 #include "TeacherViewer.hpp"
 
+std::string view::teacher::menu(){
+    return view::aux::separator() +
+    "1- Inserir novo professor\n" +
+    "2- Listar todos os professores\n" +
+    view::aux::separator();
+}
+
 void view::teacher::print(controller::TeacherController & teacherController)
 {
     std::list<model::entity::Teacher> list = teacherController.getAll();

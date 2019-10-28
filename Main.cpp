@@ -70,6 +70,37 @@ int main(int argc, char const *argv[])
             std::cout << view::main::reShowMenu();
             break;
         
+        case 2:
+
+            std::cout << view::teacher::menu();
+
+            getline(std::cin, selectionSubMenuAux, '\n');
+            selectionSubMenu = stoi(selectionSubMenuAux);
+
+            switch (selectionSubMenu)
+            {
+
+            case 1:
+                try
+                {
+                    view::teacher::insert(teacherController);
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                }
+                break;
+
+            case 2:
+                view::teacher::print(teacherController);
+                break;
+            
+            default:
+                std::cout << "Opcao invalida, voltando ao menu principal...\n";
+                break;
+            }
+            std::cout << view::main::reShowMenu();
+            break;
         case 9:
             std::cout << "Obrigado!\n";
             return 0;
@@ -78,6 +109,7 @@ int main(int argc, char const *argv[])
             std::cout << view::main::reShowMenu();
             break;
         }
+
     }
     
     return 0;

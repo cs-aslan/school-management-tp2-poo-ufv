@@ -11,6 +11,7 @@ namespace view
 {
     namespace teacher
     {
+        std::string menu();
         void print(controller::TeacherController & teacherController);
         void insert(controller::TeacherController & teacherController);
     }
