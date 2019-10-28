@@ -8,6 +8,7 @@
 #include "../../exception/BusinessRule/BusinessRule.hpp"
 
 #include "../TeacherController/TeacherController.hpp"
+#include "../StudentController/StudentController.hpp"
 
 namespace controller
 {
@@ -19,7 +20,14 @@ namespace controller
     public:
         SchoolClassController();
         ~SchoolClassController();
+
         void insert(unsigned int year, std::string teacherCPF, controller::TeacherController &teacherController);
+
+        model::entity::SchoolClass& search(unsigned int code);
+        model::entity::EnrolledStudent& searchEnrolledStudent(unsigned int code, std::string enrolledStudentCPF);
+
+        void insertEnrolledStudent(unsigned int code, std::string enrolledStudentCPF, controller::StudentController &studentController);
+        void setGradeEnrolledStudent(unsigned int code, std::string enrolledStudentCPF, double gradeValue, int gradeNumber);
     };
 }
 

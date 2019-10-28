@@ -7,6 +7,11 @@ model::entity::EnrolledStudent::EnrolledStudent(std::string CPF)  // Throws BadA
 
     this->CPF = CPF;
     this->grades = std::vector<double>(4);
+
+    this->grades[0]=0;
+    this->grades[1]=0;
+    this->grades[2]=0;
+    this->grades[3]=0;
 }
         
 model::entity::EnrolledStudent::~EnrolledStudent()

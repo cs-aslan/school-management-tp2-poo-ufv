@@ -34,3 +34,21 @@ std::list<model::entity::EnrolledStudent>& model::entity::SchoolClass::getAllEnr
 {
     return this->enrolledStudent;
 }
+
+void model::entity::SchoolClass::insertEnrolledStudent(std::string enrolledStudentCPF){
+    this->enrolledStudent.push_front(model::entity::EnrolledStudent(enrolledStudentCPF));
+}
+
+model::entity::EnrolledStudent & model::entity::SchoolClass::search(std::string enrolledStudentCPF){
+    std::list<model::entity::EnrolledStudent>::iterator it;
+
+    for (it = this->enrolledStudent.begin(); it != this->enrolledStudent.end(); it++)
+    {
+        if(it->getCPF() == enrolledStudentCPF) {
+            return *it;
+        }
+    
+    }
+
+    throw exception::PersistenceError("Valor nao encontrado no banco!");
+}

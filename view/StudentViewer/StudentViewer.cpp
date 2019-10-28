@@ -53,11 +53,7 @@ void view::student::insert(controller::StudentController & controller)
         std::string motherName;
         getline(std::cin, motherName, '\n');
 
-        std::cout << "Insira o numero de matricula: ";
-        getline(std::cin, registrationNumberSwap, '\n');
-        int registrationNumber = std::stoi(registrationNumberSwap);
-
-        controller.insert(name, cpf, street, neighborhood, city, CEP, fatherName, motherName, registrationNumber);
+        controller.insert(name, cpf, street, neighborhood, city, CEP, fatherName, motherName);
     }
     catch(exception::BusinessRule& e)
     {

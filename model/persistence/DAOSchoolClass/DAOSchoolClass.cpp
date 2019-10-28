@@ -27,21 +27,10 @@ model::entity::SchoolClass & model::persistence::DAOSchoolClass::search(unsigned
     throw exception::PersistenceError("Valor nao encontrado no banco!");
 }
 
-// void model::persistence::DAOSchoolClass::remove(std::string CPF){
-//     std::list<model::entity::SchoolClass>::iterator it;
-
-//     for (it = this->persistence.begin(); it != this->persistence.end(); it++)
-//     {
-//         if(it->getCpf() == CPF) {
-//             this->persistence.erase(it);
-//             return;
-//         }
-    
-//     }
-
-//     throw exception::PersistenceError("Valor nao encontrado no banco!");
-// }
-
 std::list<model::entity::SchoolClass>& model::persistence::DAOSchoolClass::getAll(){
     return this-> persistence;
+}
+
+void model::persistence::DAOSchoolClass::insertEnrolledStudent(unsigned int code, std::string enrolledStudentCPF){
+    this->search(code).insertEnrolledStudent(enrolledStudentCPF);
 }

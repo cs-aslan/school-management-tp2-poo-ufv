@@ -18,10 +18,18 @@ int main(int argc, char const *argv[])
 {
     try
     {
-        controller::SchoolClassController a = controller::SchoolClassController();
-        controller::TeacherController b = controller::TeacherController();
-        b.insert("Mateus", "10631890637", "rua das palmeiras", "centro", "para de minas", "35694000", "mat", 999);
-        a.insert(2019, "10631890637", b);
+        controller::SchoolClassController schoolClassController = controller::SchoolClassController();
+        controller::TeacherController teacherController = controller::TeacherController();
+        controller::StudentController studentController = controller::StudentController();
+
+        teacherController.insert("Mateus", "10631890637", "rua das palmeiras", "centro", "para de minas", "35694000", "mat", 999);
+        schoolClassController.insert(2019, "10631890637", teacherController);
+
+        studentController.insert("Joaozin", "40210316691", "Rua dos bobos", "centro", "arrocha", "35694000", "feijao", "arroz");
+
+        schoolClassController.insertEnrolledStudent(0, "40210316691", studentController);
+
+        schoolClassController.setGradeEnrolledStudent(0, "40210316691", 99, 2);
     }
     catch(exception::BusinessRule& e)
     {

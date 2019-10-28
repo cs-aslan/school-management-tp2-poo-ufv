@@ -17,9 +17,10 @@ namespace controller
     public:
         StudentController();
         ~StudentController();
-        void insert(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName, unsigned int registrationNumber);
+        void insert(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName);
         std::list<model::entity::Student>& getAll();
 
+        model::entity::Student& search(std::string cpf);
         
         void setStreet(std::string cpf, std::string street); // Throws BadArgument, Persistence Error
         void setNeighborhood(std::string cpf, std::string neighborhood); // Throws BadArgument, Persistence Error

@@ -20,6 +20,8 @@ namespace model
             void insert(unsigned int code, unsigned int year, std::string teacherCPF);
             entity::SchoolClass & search(unsigned int code);
             std::list<model::entity::SchoolClass>& getAll();
+
+            void insertEnrolledStudent(unsigned int code, std::string enrolledStudentCPF);
         };
         
     } // namespace persistence

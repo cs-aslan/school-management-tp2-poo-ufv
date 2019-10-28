@@ -10,7 +10,7 @@ controller::StudentController::~StudentController()
 {
 }
 
-void controller::StudentController::insert(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName, unsigned int registrationNumber){
+void controller::StudentController::insert(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string fatherName, std::string motherName){
     try
     {
         this->persistence.search(cpf); // Throws exception when there is no register with this cpf
@@ -28,27 +28,31 @@ std::list<model::entity::Student>& controller::StudentController::getAll(){
     return this-> persistence.getAll();
 }
 
+model::entity::Student& controller::StudentController::search(std::string cpf){
+    return this->persistence.search(cpf);
+}
+
 void controller::StudentController::setStreet(std::string cpf, std::string street) // Throws BadArgument, Persistence Error
 {
-    this->persistence.search(cpf).setStreet(street);
+    this->search(cpf).setStreet(street);
 }
 
 void controller::StudentController::setNeighborhood(std::string cpf, std::string neighborhood) // Throws BadArgument, Persistence Error
 {
-    this->persistence.search(cpf).setNeighborhood(neighborhood);
+    this->search(cpf).setNeighborhood(neighborhood);
 }
 
 void controller::StudentController::setCity(std::string cpf, std::string city) // Throws BadArgument, Persistence Error
 {
-    this->persistence.search(cpf).setCity(city);
+    this->search(cpf).setCity(city);
 }
 
 void controller::StudentController::setCEP(std::string cpf, std::string CEP) // Throws BadArgument, Persistence Error
 {
-    this->persistence.search(cpf).setCEP(CEP);
+    this->search(cpf).setCEP(CEP);
 }
 
 void controller::StudentController::setActive(std::string cpf, bool active) // Throws Persistence Error
 {
-    this->persistence.search(cpf).setActive(active);
+    this->search(cpf).setActive(active);
 }
