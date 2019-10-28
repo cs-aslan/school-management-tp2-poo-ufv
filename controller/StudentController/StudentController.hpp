@@ -13,6 +13,7 @@ namespace controller
     {
     private:
         model::persistence::DAOStudent persistence;
+        unsigned int lastRegistrationNumber;
     public:
         StudentController();
         ~StudentController();

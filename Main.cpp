@@ -10,6 +10,7 @@
 #include "exception/BusinessRule/BusinessRule.hpp"
 #include "controller/TeacherController/TeacherController.hpp"
 #include "controller/StudentController/StudentController.hpp"
+#include "controller/SchoolClassController/SchoolClassController.hpp"
 #include "view/TeacherViewer/TeacherViewer.hpp"
 #include "view/StudentViewer/StudentViewer.hpp"
 
@@ -17,8 +18,10 @@ int main(int argc, char const *argv[])
 {
     try
     {
-        model::entity::EnrolledStudent estudante = model::entity::EnrolledStudent("106");
-        estudante.setGrade(3, 3.5);
+        controller::SchoolClassController a = controller::SchoolClassController();
+        controller::TeacherController b = controller::TeacherController();
+        b.insert("Mateus", "10631890637", "rua das palmeiras", "centro", "para de minas", "35694000", "mat", 999);
+        a.insert(2019, "10631890637", b);
     }
     catch(exception::BusinessRule& e)
     {

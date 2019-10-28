@@ -50,3 +50,7 @@ void controller::TeacherController::setActive(std::string cpf, bool active) // T
 {
     this->persistence.search(cpf).setActive(active);
 }
+
+model::entity::Teacher & controller::TeacherController::search(std::string CPF){
+    return this->persistence.search(CPF);
+}

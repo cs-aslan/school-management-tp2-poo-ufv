@@ -3,6 +3,7 @@
 controller::StudentController::StudentController()
 {
     this->persistence = model::persistence::DAOStudent();
+    this->lastRegistrationNumber = 0;
 }
 
 controller::StudentController::~StudentController()
@@ -17,7 +18,8 @@ void controller::StudentController::insert(std::string name, std::string cpf, st
     }
     catch(exception::PersistenceError& e)
     {
-        this->persistence.insert(name, cpf, street, neighborhood, city, CEP, fatherName, motherName, registrationNumber);
+        this->persistence.insert(name, cpf, street, neighborhood, city, CEP, fatherName, motherName, this->lastRegistrationNumber);
+        this->lastRegistrationNumber++;
     }
     
 }

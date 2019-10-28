@@ -3,6 +3,7 @@
 
 #include <string>
 #include "../../model/persistence/DAOTeacher/DAOTeacher.hpp"
+#include "../../model/entity/Teacher/Teacher.hpp"
 
 #include "../../exception/PersistenceError/PersistenceError.hpp"
 #include "../../exception/BusinessRule/BusinessRule.hpp"
@@ -19,7 +20,7 @@ namespace controller
         void insert(std::string name, std::string cpf, std::string street, std::string neighborhood, std::string city, std::string CEP, std::string area, double SalaryPerHour);
         std::list<model::entity::Teacher>& getAll();
 
-        
+        model::entity::Teacher & search(std::string CPF);
         void setStreet(std::string cpf, std::string street); // Throws BadArgument, Persistence Error
         void setNeighborhood(std::string cpf, std::string neighborhood); // Throws BadArgument, Persistence Error
         void setCity(std::string cpf, std::string city); // Throws BadArgument, Persistence Error
