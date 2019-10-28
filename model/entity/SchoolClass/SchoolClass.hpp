@@ -31,6 +31,8 @@ namespace model
             unsigned int getYear();
             std::list<model::entity::EnrolledStudent> & getAllEnrolledStudents();
 
+            std::string toString();
+
             void insertEnrolledStudent(std::string enrolledStudentCPF);
         };
         

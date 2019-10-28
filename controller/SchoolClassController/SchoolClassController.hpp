@@ -22,7 +22,8 @@ namespace controller
         ~SchoolClassController();
 
         void insert(unsigned int year, std::string teacherCPF, controller::TeacherController &teacherController);
-
+        std::list<model::entity::SchoolClass>& getAll();
+        
         model::entity::SchoolClass& search(unsigned int code);
         model::entity::EnrolledStudent& searchEnrolledStudent(unsigned int code, std::string enrolledStudentCPF);
 

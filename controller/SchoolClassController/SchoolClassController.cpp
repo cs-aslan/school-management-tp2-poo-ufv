@@ -51,3 +51,7 @@ void controller::SchoolClassController::setGradeEnrolledStudent(unsigned int cod
     
     this->searchEnrolledStudent(code, enrolledStudentCPF).setGrade(gradeNumber-1, gradeValue);
 }
+
+std::list<model::entity::SchoolClass>& controller::SchoolClassController::getAll(){
+    return this->persistence.getAll();
+}

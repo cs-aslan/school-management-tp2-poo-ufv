@@ -52,3 +52,9 @@ model::entity::EnrolledStudent & model::entity::SchoolClass::search(std::string 
 
     throw exception::PersistenceError("Valor nao encontrado no banco!");
 }
+
+std::string model::entity::SchoolClass::toString(){
+    return "Codigo: " + std::to_string(this->code) + "\n" +
+            "CPF do professor: " + this->teacherCPF + "\n" +
+            "Ano: " + std::to_string(this->year) + "\n";
+}

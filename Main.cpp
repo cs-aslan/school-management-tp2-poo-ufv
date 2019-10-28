@@ -12,6 +12,7 @@
 #include "view/MainViewer/MainViewer.hpp"
 #include "view/TeacherViewer/TeacherViewer.hpp"
 #include "view/StudentViewer/StudentViewer.hpp"
+#include "view/SchoolClassViewer/SchoolClassViewer.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -49,14 +50,7 @@ int main(int argc, char const *argv[])
             {
 
             case 1:
-                try
-                {
-                    view::student::insert(studentController);
-                }
-                catch(const std::exception& e)
-                {
-                    std::cerr << e.what() << '\n';
-                }
+                view::student::insert(studentController);
                 break;
 
             case 2:
@@ -67,6 +61,7 @@ int main(int argc, char const *argv[])
                 std::cout << "Opcao invalida, voltando ao menu principal...\n";
                 break;
             }
+
             std::cout << view::main::reShowMenu();
             break;
         
@@ -81,14 +76,7 @@ int main(int argc, char const *argv[])
             {
 
             case 1:
-                try
-                {
-                    view::teacher::insert(teacherController);
-                }
-                catch(const std::exception& e)
-                {
-                    std::cerr << e.what() << '\n';
-                }
+                view::teacher::insert(teacherController);
                 break;
 
             case 2:
@@ -99,8 +87,36 @@ int main(int argc, char const *argv[])
                 std::cout << "Opcao invalida, voltando ao menu principal...\n";
                 break;
             }
+
             std::cout << view::main::reShowMenu();
             break;
+
+        case 3:
+
+            std::cout << view::schoolClass::menu();
+
+            getline(std::cin, selectionSubMenuAux, '\n');
+            selectionSubMenu = stoi(selectionSubMenuAux);
+
+            switch (selectionSubMenu)
+            {
+
+            case 1:
+                view::schoolClass::insert(schoolClassController, teacherController);
+                break;
+
+            case 2:
+                view::schoolClass::print(schoolClassController);
+                break;
+            
+            default:
+                std::cout << "Opcao invalida, voltando ao menu principal...\n";
+                break;
+            }
+
+            std::cout << view::main::reShowMenu();
+            break;
+
         case 9:
             std::cout << "Obrigado!\n";
             return 0;
