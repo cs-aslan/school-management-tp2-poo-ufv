@@ -68,6 +68,10 @@ void view::student::insert(controller::StudentController & controller)
 
         controller.insert(name, cpf, street, neighborhood, city, CEP, fatherName, motherName);
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -75,6 +79,10 @@ void view::student::insert(controller::StudentController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 
     std::cout << view::aux::separator();
@@ -96,6 +104,10 @@ void view::student::setStreet(controller::StudentController & controller)
     controller.search(cpf).setStreet(street);
 
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -103,6 +115,10 @@ void view::student::setStreet(controller::StudentController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -122,6 +138,10 @@ void view::student::setNeighborhood(controller::StudentController & controller)
     controller.search(cpf).setNeighborhood(neighborhood);
     
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -129,6 +149,10 @@ void view::student::setNeighborhood(controller::StudentController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -148,6 +172,10 @@ void view::student::setCity(controller::StudentController & controller)
     controller.search(cpf).setCity(city);
     
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -155,6 +183,10 @@ void view::student::setCity(controller::StudentController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -174,6 +206,10 @@ void view::student::setCEP(controller::StudentController & controller)
     controller.search(CPF).setCEP(CEP);
     
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -181,5 +217,9 @@ void view::student::setCEP(controller::StudentController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }

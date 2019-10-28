@@ -170,8 +170,9 @@ int main(int argc, char const *argv[])
 
         case 4:
             view::reportCard::createReportCard(schoolClassController, studentController);
+            std::cout << view::main::reShowMenu();
             break;
-            
+
         case 9:
             std::cout << "Obrigado!\n";
             return 0;

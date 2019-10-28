@@ -10,9 +10,21 @@ std::string view::reportCard::createReportCard(controller::SchoolClassController
         std::cout << "Insira o codigo da turma: ";
         std::string classCodeAux;
         getline(std::cin, classCodeAux, '\n');
-        unsigned int classCode = std::stoul(classCodeAux);
+        unsigned int classCode = std::stoi(classCodeAux);
 
         toBeReturned = reportCard.createReportCard(classCode, schoolClassController, studentClassController);
+    }
+    catch(exception::BusinessRule& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(exception::BadArgument& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
     }
     catch(const std::exception& e)
     {

@@ -69,6 +69,10 @@ void view::teacher::insert(controller::TeacherController & teacherController)
 
         teacherController.insert(name, cpf, street, neighborhood, city, CEP, area, salaryPerHour);
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -76,6 +80,10 @@ void view::teacher::insert(controller::TeacherController & teacherController)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 
     std::cout << view::aux::separator();
@@ -97,6 +105,10 @@ void view::teacher::setStreet(controller::TeacherController & controller)
     controller.search(cpf).setStreet(street);
 
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -104,6 +116,10 @@ void view::teacher::setStreet(controller::TeacherController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -123,6 +139,10 @@ void view::teacher::setNeighborhood(controller::TeacherController & controller)
     controller.search(cpf).setNeighborhood(neighborhood);
     
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -130,6 +150,10 @@ void view::teacher::setNeighborhood(controller::TeacherController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -149,6 +173,10 @@ void view::teacher::setCity(controller::TeacherController & controller)
     controller.search(cpf).setCity(city);
     
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -156,6 +184,10 @@ void view::teacher::setCity(controller::TeacherController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -183,6 +215,10 @@ void view::teacher::setCEP(controller::TeacherController & controller)
     {
         std::cerr << e.what() << std::endl;
     }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
 void view::teacher::setArea(controller::TeacherController & controller)
@@ -201,6 +237,10 @@ void view::teacher::setArea(controller::TeacherController & controller)
     controller.search(CPF).setArea(area);
     
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -208,6 +248,10 @@ void view::teacher::setArea(controller::TeacherController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -229,6 +273,10 @@ void view::teacher::setSalaryPerHour(controller::TeacherController & controller)
     controller.search(CPF).setSalaryPerHour(salaryPerHour);
     
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -236,5 +284,9 @@ void view::teacher::setSalaryPerHour(controller::TeacherController & controller)
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }

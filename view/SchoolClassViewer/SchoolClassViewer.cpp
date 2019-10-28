@@ -39,6 +39,10 @@ void view::schoolClass::insert(controller::SchoolClassController & schoolClassCo
 
         schoolClassController.insert(year, teacherCPF, teacherController);
     }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     catch(exception::BusinessRule& e)
     {
         std::cerr << e.what() << std::endl;
@@ -46,6 +50,10 @@ void view::schoolClass::insert(controller::SchoolClassController & schoolClassCo
     catch(exception::BadArgument& e)
     {
         std::cerr << e.what() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 
     std::cout << view::aux::separator();
@@ -64,6 +72,18 @@ void view::schoolClass::insertEnrolledStudent(controller::SchoolClassController 
         getline(std::cin, enrolledStudentCPF, '\n');
 
         controller.insertEnrolledStudent(classCode, enrolledStudentCPF, studentController);
+    }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(exception::BusinessRule& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(exception::BadArgument& e)
+    {
+        std::cerr << e.what() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -95,6 +115,18 @@ void view::schoolClass::setGrade(controller::SchoolClassController & controller)
         double gradeValue = std::stod(gradeValueAux);
 
         controller.setGradeEnrolledStudent(classCode, enrolledStudentCPF, gradeValue, gradeNumber);
+    }
+    catch(exception::PersistenceError& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(exception::BusinessRule& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(exception::BadArgument& e)
+    {
+        std::cerr << e.what() << std::endl;
     }
     catch(const std::exception& e)
     {
