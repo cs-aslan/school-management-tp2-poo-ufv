@@ -7,6 +7,7 @@ std::string view::main::mainMenu()
             "1- Gerenciar alunos\n" +
             "2- Gerenciar professores\n" +
             "3- Gerenciar turmas\n" +
+            "4- Gerar boletins\n" +
             "9- Sair\n" +
             view::aux::separator();
 }

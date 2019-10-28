@@ -9,6 +9,7 @@
 #include "view/TeacherViewer/TeacherViewer.hpp"
 #include "view/StudentViewer/StudentViewer.hpp"
 #include "view/SchoolClassViewer/SchoolClassViewer.hpp"
+#include "view/ReportCardViewer/ReportCardViewer.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -167,6 +168,10 @@ int main(int argc, char const *argv[])
             std::cout << view::main::reShowMenu();
             break;
 
+        case 4:
+            view::reportCard::createReportCard(schoolClassController, studentController);
+            break;
+            
         case 9:
             std::cout << "Obrigado!\n";
             return 0;
