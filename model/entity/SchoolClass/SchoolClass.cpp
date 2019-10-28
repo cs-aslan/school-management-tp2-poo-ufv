@@ -54,7 +54,16 @@ model::entity::EnrolledStudent & model::entity::SchoolClass::search(std::string 
 }
 
 std::string model::entity::SchoolClass::toString(){
-    return "Codigo: " + std::to_string(this->code) + "\n" +
+    std::string toBeReturned = "Codigo: " + std::to_string(this->code) + "\n" +
             "CPF do professor: " + this->teacherCPF + "\n" +
             "Ano: " + std::to_string(this->year) + "\n";
+
+    std::list<model::entity::EnrolledStudent>::iterator it;
+
+    for (it = this->enrolledStudent.begin(); it != this->enrolledStudent.end(); it++)
+    {
+        toBeReturned += it->toString() + "\n\n";
+    }
+
+    return toBeReturned;
 }

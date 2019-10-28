@@ -14,6 +14,14 @@ namespace view
         std::string menu();
         void print(controller::TeacherController & teacherController);
         void insert(controller::TeacherController & teacherController);
+
+        void setStreet(controller::TeacherController & controller);
+        void setNeighborhood(controller::TeacherController & controller);
+        void setCity(controller::TeacherController & controller);
+        void setCEP(controller::TeacherController & controller);
+
+        void setArea(controller::TeacherController & controller);
+        void setSalaryPerHour(controller::TeacherController & controller);
     }
 
 }

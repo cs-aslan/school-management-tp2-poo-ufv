@@ -22,6 +22,8 @@ namespace model
 
             std::string getCPF();
             std::vector<double>& getGrades();
+
+            std::string toString();
             
             void setGrade(int position, double grade);
         };

@@ -51,7 +51,7 @@ void view::schoolClass::insert(controller::SchoolClassController & schoolClassCo
     std::cout << view::aux::separator();
 }
 
-void insertEnrolledStudent(controller::SchoolClassController & controller, controller::StudentController & studentController){
+void view::schoolClass::insertEnrolledStudent(controller::SchoolClassController & controller, controller::StudentController & studentController){
     try
     {
         std::cout << "Insira o codigo da turma: ";
@@ -72,7 +72,7 @@ void insertEnrolledStudent(controller::SchoolClassController & controller, contr
     
 }
 
-void setGrade(controller::SchoolClassController & controller){
+void view::schoolClass::setGrade(controller::SchoolClassController & controller){
     try
     {
         std::cout << "Insira o codigo da turma: ";
@@ -89,7 +89,7 @@ void setGrade(controller::SchoolClassController & controller){
         getline(std::cin, gradeNumberAux, '\n');
         unsigned int gradeNumber = std::stoi(gradeNumberAux);
 
-        std::cout << "Insira a nota do bimestre (1 a 4): ";
+        std::cout << "Insira a nota do bimestre: ";
         std::string gradeValueAux;
         getline(std::cin, gradeValueAux, '\n');
         double gradeValue = std::stod(gradeValueAux);

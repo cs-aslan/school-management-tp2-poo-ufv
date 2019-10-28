@@ -14,6 +14,11 @@ namespace view
         std::string menu();
         void print(controller::StudentController & controller);
         void insert(controller::StudentController & controller);
+
+        void setStreet(controller::StudentController & controller);
+        void setNeighborhood(controller::StudentController & controller);
+        void setCity(controller::StudentController & controller);
+        void setCEP(controller::StudentController & controller);
     }
 
 }

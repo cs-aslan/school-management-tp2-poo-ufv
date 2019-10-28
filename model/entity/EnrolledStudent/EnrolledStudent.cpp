@@ -33,3 +33,12 @@ void model::entity::EnrolledStudent::setGrade(int position, double grade)
 {
     this->grades[position] = grade;
 }
+
+std::string model::entity::EnrolledStudent::toString()
+{
+    return "CPF do aluno: " + this->CPF + "\n" +
+    "  Primeiro bimestre: " + std::to_string(this->grades[0]) + "\n" +
+    "  Segundo bimestre: " + std::to_string(this->grades[1]) + "\n" +
+    "  Terceiro bimestre: " + std::to_string(this->grades[2]) + "\n" +
+    "  Quarto bimestre: " + std::to_string(this->grades[3]) + "\n";
+}

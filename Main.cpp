@@ -53,6 +53,25 @@ int main(int argc, char const *argv[])
                 view::student::print(studentController);
                 break;
             
+            case 3:
+                view::student::setStreet(studentController);
+                break;
+
+            case 4:
+                view::student::setNeighborhood(studentController);
+                break;
+
+            case 5:
+                view::student::setCity(studentController);
+                break;
+
+            case 6:
+                view::student::setCEP(studentController);
+                break;
+
+            case 9:
+                break;
+            
             default:
                 std::cout << "Opcao invalida, voltando ao menu principal...\n";
                 break;
@@ -77,6 +96,33 @@ int main(int argc, char const *argv[])
 
             case 2:
                 view::teacher::print(teacherController);
+                break;
+
+            case 3:
+                view::teacher::setStreet(teacherController);
+                break;
+
+            case 4:
+                view::teacher::setNeighborhood(teacherController);
+                break;
+
+            case 5:
+                view::teacher::setCity(teacherController);
+                break;
+
+            case 6:
+                view::teacher::setCEP(teacherController);
+                break;
+
+            case 7:
+                view::teacher::setArea(teacherController);
+                break;
+
+            case 8:
+                view::teacher::setSalaryPerHour(teacherController);
+                break;
+
+            case 9:
                 break;
             
             default:
